@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.teamuxh.uxhloader">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <application
+        android:name=".csl"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:requestLegacyExternalStorage="true"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:resizeableActivity="false"
+        android:theme="@style/Theme.UxHLoader">
+        <activity android:name=".MainActivity" android:theme="@style/Theme.UxHLoader" android:process=":UxHProc">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.teamuxh.glplugin.MainActivity"
+            android:process=":UxHProc"
+            android:theme="@style/Theme.UxHLoader"
+            tools:ignore="MissingClass" />
+
+        <activity android:name="com.teamuxh.glplugin.home"
+            android:process=":UxHProc"
+            android:theme="@style/Theme.UxHLoader"
+            tools:ignore="MissingClass" />
+        <service android:name="com.teamuxh.glplugin.Fs"
+            android:process=":UxHProc"
+            android:theme="@style/Theme.UxHLoader"
+            tools:ignore="MissingClass" />
+    </application>
+
+</manifest>

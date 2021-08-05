@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:id="@+id/linearLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/roundedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:background="@color/dark_shadow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius_bottom_left="@dimen/_20sdp"
+            app:riv_corner_radius_bottom_right="@dimen/_20sdp"
+            app:riv_mutate_background="true" />
+
+        <TextView
+            android:id="@+id/txttitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:text="계기반"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
+            app:constraint_referenced_ids="logo"
+            app:flow_maxElementsWrap="2"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txttitle" />
+
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:id="@+id/logo"
+            android:layout_height="@dimen/_80sdp"
+            app:neumorph_lightSource="leftBottom"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:neumorph_backgroundColor="@color/background"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_3sdp"
+            app:neumorph_shapeType="basin"
+            app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+            tools:ignore="MissingConstraint">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="발표"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/anouncement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TeamUxH의 로더 | 공사중"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </soup.neumorphism.NeumorphCardView>
+        <TextView
+            android:id="@+id/selectgame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:text="게임 선택"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roundedImageView"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow2"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:constraint_referenced_ids="game1"
+            app:flow_wrapMode="aligned"
+            android:isScrollContainer="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_50sdp"
+            app:layout_constraintTop_toBottomOf="@id/selectgame"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/game1"
+            android:layout_width="0dp"
+            app:layout_constraintTop_toBottomOf="@id/selectgame"
+            android:isScrollContainer="true"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+           >
+            <LinearLayout
+                android:baselineAligned="false"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <soup.neumorphism.NeumorphCardView
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="pressed"
+                    app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+                    tools:ignore="MissingConstraints">
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <soup.neumorphism.NeumorphCardView
+                            android:id="@+id/glmn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+                            app:neumorph_backgroundColor="@color/background"
+                            app:neumorph_shadowColorDark="@color/dark_shadow"
+                            app:neumorph_shadowColorLight="@color/light_shadow"
+                            app:neumorph_shadowElevation="@dimen/_3sdp"
+                            app:neumorph_shapeType="flat">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_3sdp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_60sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:padding="@dimen/_5sdp"
+                                        android:src="@drawable/pubgmgl"
+                                        tools:ignore="TooDeepLayout" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/_2sdp"
+                                        android:text="PUBGM GLOBAL"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/_5sdp">
+                                    <TextView
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/_13sdp"
+                                        android:text="Status of game"
+                                        android:textColor="@color/black"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"/>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <TextView
+                                            android:textColor="@color/black"
+                                            android:text="Game Version: "
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                        <TextView
+                                            android:id="@+id/glversion"
+                                            android:text="1.4.0"
+                                            android:textColor="@color/black"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <TextView
+                                            android:textColor="@color/black"
+                                            android:text="Cheat Status: "
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                        <TextView
+                                            android:id="@+id/glstatus"
+                                            android:text="Safe"
+                                            android:textColor="@color/black"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <TextView
+                                            android:textColor="@color/black"
+                                            android:text="Last Update: "
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                        <TextView
+                                            android:id="@+id/glupdateTime"
+                                            android:text="05:05:2021"
+                                            android:textColor="@color/black"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </soup.neumorphism.NeumorphCardView>
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/downloadGL"
+                                android:layout_width="@dimen/_45sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:src="@drawable/download_foreground"
+                                android:padding="@dimen/_9sdp"
+                                app:tint="@color/primary"
+                                app:neumorph_shadowColorLight="@color/light_shadow"
+                                app:neumorph_shadowColorDark="@color/dark_shadow"
+                                app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                            <soup.neumorphism.NeumorphImageView
+                                android:id="@+id/launchGlobal"
+                                android:layout_width="@dimen/_45sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:src="@drawable/ic_round_launch_24"
+                                android:padding="@dimen/_14sdp"
+                                app:tint="@color/primary"
+                                app:neumorph_shadowColorLight="@color/light_shadow"
+                                app:neumorph_shadowColorDark="@color/dark_shadow"
+                                app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+                <soup.neumorphism.NeumorphCardView
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="pressed"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <soup.neumorphism.NeumorphCardView
+                            android:id="@+id/krmn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+                            app:neumorph_backgroundColor="@color/background"
+                            app:neumorph_shadowColorDark="@color/dark_shadow"
+                            app:neumorph_shadowColorLight="@color/light_shadow"
+                            app:neumorph_shadowElevation="@dimen/_3sdp"
+                            app:neumorph_shapeType="flat">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_60sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:padding="@dimen/_5sdp"
+                                        android:src="@drawable/pubgmkr" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/_2sdp"
+                                        android:text="PUBGM KOREA"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/_5sdp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Status of game"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_13sdp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Game Version: "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/krversion"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="1.4.0"
+                                            android:textColor="@color/black" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Cheat Status: "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/krstatus"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Safe"
+                                            android:textColor="@color/black" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Last Update: "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/krupdate"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="05:05:2021"
+                                            android:textColor="@color/black" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </soup.neumorphism.NeumorphCardView>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <soup.neumorphism.NeumorphImageView
+                                android:layout_width="@dimen/_45sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:src="@drawable/download_foreground"
+                                android:padding="@dimen/_9sdp"
+                                app:tint="@color/primary"
+                                app:neumorph_shadowColorLight="@color/light_shadow"
+                                app:neumorph_shadowColorDark="@color/dark_shadow"
+                                app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                            <soup.neumorphism.NeumorphImageView
+                                android:layout_width="@dimen/_45sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:src="@drawable/ic_round_launch_24"
+                                android:padding="@dimen/_14sdp"
+                                app:tint="@color/primary"
+                                app:neumorph_shadowColorLight="@color/light_shadow"
+                                app:neumorph_shadowColorDark="@color/dark_shadow"
+                                app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+                <soup.neumorphism.NeumorphCardView
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+                    app:neumorph_backgroundColor="@color/background"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="pressed"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <soup.neumorphism.NeumorphCardView
+                            android:id="@+id/codmn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+                            app:neumorph_backgroundColor="@color/background"
+                            app:neumorph_shadowColorDark="@color/dark_shadow"
+                            app:neumorph_shadowColorLight="@color/light_shadow"
+                            app:neumorph_shadowElevation="@dimen/_3sdp"
+                            app:neumorph_shapeType="flat">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_60sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:padding="@dimen/_5sdp"
+                                        android:src="@drawable/pubgmkr" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/_2sdp"
+                                        android:text="PUBGM VNG"
+                                        android:textColor="@color/black"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/_5sdp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Status of game"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_13sdp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Game Version: "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/vngversion"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="1.4.0"
+                                            android:textColor="@color/black" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Cheat Status: "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/vngstatus"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Safe"
+                                            android:textColor="@color/black" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Last Update: "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/vngupdatetime"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="05:05:2021"
+                                            android:textColor="@color/black" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </soup.neumorphism.NeumorphCardView>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <soup.neumorphism.NeumorphImageView
+                                android:layout_width="@dimen/_45sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:src="@drawable/download_foreground"
+                                android:padding="@dimen/_9sdp"
+                                app:tint="@color/primary"
+                                app:neumorph_shadowColorLight="@color/light_shadow"
+                                app:neumorph_shadowColorDark="@color/dark_shadow"
+                                app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                            <soup.neumorphism.NeumorphImageView
+                                android:layout_width="@dimen/_45sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:src="@drawable/ic_round_launch_24"
+                                android:padding="@dimen/_14sdp"
+                                app:tint="@color/primary"
+                                app:neumorph_shadowColorLight="@color/light_shadow"
+                                app:neumorph_shadowColorDark="@color/dark_shadow"
+                                app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </soup.neumorphism.NeumorphCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="toolbaar"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/toolbaar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:neumorph_shapeAppearance="@style/Neumorphism_cardview"
+            app:neumorph_backgroundColor="@color/background"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_6sdp"
+            app:neumorph_shapeType="flat"
+            tools:ignore="MissingConstraints">
+            <LinearLayout
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="TooManyViews">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Team UxH"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loader Version: "
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1.0.0"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <soup.neumorphism.NeumorphImageView
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:src="@drawable/ic_round_refresh_24"
+                        android:padding="@dimen/_12sdp"
+                        app:tint="@color/primary"
+                        app:neumorph_shadowColorLight="@color/light_shadow"
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shapeAppearance="@style/NeumorphismImagesmall"/>
+                </LinearLayout>
+            </LinearLayout>
+        </soup.neumorphism.NeumorphCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

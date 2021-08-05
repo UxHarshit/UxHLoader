@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/dialog_footer"
+    android:layout_margin="@dimen/_10sdp"
+    android:padding="@dimen/_13sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/txtview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connecting ..."
+            android:textColor="@color/black" />
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/card_veiw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow">
+
+            <ProgressBar
+                android:id="@+id/progressLoad"
+                android:progressBackgroundTintMode="@android:color/transparent"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_margin="@dimen/_2sdp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:max="100"
+               android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/bak_layer"
+                android:progressDrawable="@drawable/bak_layer" />
+        </soup.neumorphism.NeumorphCardView>
+
+    </LinearLayout>
+</LinearLayout>
